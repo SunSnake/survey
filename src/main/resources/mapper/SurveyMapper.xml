@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.winter.survey.dao.SurveyMapper">
+    <insert id="insert" parameterType="com.winter.survey.bean.Survey">
+        insert into survey(survey_title) values (#{survey_title})
+    </insert>
+    <delete id="delete" parameterType="com.winter.survey.bean.Survey">
+        delete from survey where survey_title=#{survey_title}
+    </delete>
+    <select id="query" parameterType="com.winter.survey.bean.Survey" resultType="com.winter.survey.bean.Survey">
+        select * from survey where survey_title=#{survey_title}
+    </select>
+    <update id="update" parameterType="com.winter.survey.bean.Survey">
+        update survey set survey_title=#{survey_title}
+    </update>
+</mapper>
